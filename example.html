@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script>
+    function createMCCDropdown(MCC){
+
+      var dropdown = document.getElementById("MCCDropdown");
+      var option = document.createElement("OPTION");
+      for(var i = 0;i < MCC.length; i++){
+        option.innerHTML = MCC[i].MCCname;
+        option.value = MCC[i].MCCcode;
+        dropdown.appendChild(option);
+        option = document.createElement("OPTION");
+      }
+    }
+      function getMCCjson(){
+
+           // http://localhost:8080
+           fetch('StripeMCC.json')
+           .then(response => {
+               if (!response.ok) {
+                   throw new Error("HTTP error " + response.status);
+               }
+               return response.json();
+           })
+           .then(json => {
+               createMCCDropdown(json);
+
+           })
+           .catch(function () {
+               this.dataError = true;
+           })
+      }
+    </script>
+  </head>
+  <body>
+    <select id="MCCDropdown" name="MCC"></select>
+    <script>
+      getMCCjson();
+    </script>
+
+  </body>
+</html>
