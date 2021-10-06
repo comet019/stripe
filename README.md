@@ -9,4 +9,5 @@
 
 
 sort.php sorts the list into a json file called StripeMCC.json.
+
 example.html fetches this file then creates OPTION elements inside the SELECT element.
