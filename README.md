@@ -4,7 +4,7 @@
 # STEPS
 Stripe MCC List -> https://stripe.com/docs/connect/setting-mcc
 
-1. Copy MCC list to "sort.txt" then run scipt
+1. Copy MCC list to "sort.txt" then run sort.php
 2. Delete sort.php
 3. Go To 'example.html'
 
